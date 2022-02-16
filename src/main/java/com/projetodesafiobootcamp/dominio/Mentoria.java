@@ -3,39 +3,13 @@ package com.projetodesafiobootcamp.dominio;
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class Mentoria {
+public class Mentoria extends Conteudo {
 
-    private String titulo;
-    private String descricao;
     private LocalDate dataMentoria;
 
-    public Integer calcularXp() {
-        return 0;
-    }
-
-    public Mentoria() {
-    }
-
-    public Mentoria(String titulo, String descricao, LocalDate dataMentoria) {
-        this.titulo = titulo;
-        this.descricao = descricao;
-        this.dataMentoria = dataMentoria;
-    }
-
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    @Override
+    public double calcularXp() {
+        return XP_PADRAO + 20d;
     }
 
     public LocalDate getDataMentoria() {
@@ -47,25 +21,11 @@ public class Mentoria {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Mentoria mentoria = (Mentoria) o;
-        return titulo.equals(mentoria.titulo) && descricao.equals(mentoria.descricao) && dataMentoria.equals(mentoria.dataMentoria);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(titulo, descricao, dataMentoria);
-    }
-
-    @Override
     public String toString() {
         return "Mentoria{" +
-                "titulo='" + titulo + '\'' +
-                ", descricao='" + descricao + '\'' +
+                "titulo=" + getTitulo() +
+                ", descrição=" + getDescricao() +
                 ", dataMentoria=" + dataMentoria +
                 '}';
     }
-
 }
