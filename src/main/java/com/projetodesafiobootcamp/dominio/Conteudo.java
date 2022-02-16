@@ -4,7 +4,8 @@ package com.projetodesafiobootcamp.dominio;
 
 public abstract class Conteudo {
 
-    public static final double XP_PADRAO = 10d;
+    //Somente os filhos de conteúdo terão acesso a variável XP_PADRAO
+    protected static final double XP_PADRAO = 10d;
 
     private String titulo;
     private String descricao;

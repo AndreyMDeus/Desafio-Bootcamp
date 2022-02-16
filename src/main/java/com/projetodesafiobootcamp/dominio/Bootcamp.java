@@ -5,12 +5,12 @@ import java.util.*;
 
 public class Bootcamp {
 
-    public String nome;
-    public String descricao;
-    public LocalDate dataInicial;
-    public LocalDate dataFinal;
-    public Set<Dev> devsInscritos = new HashSet<>();
-    public Set<Conteudo> conteudos = new LinkedHashSet<>();
+    private String nome;
+    private String descricao;
+    private final LocalDate dataInicial = LocalDate.now();
+    private final LocalDate dataFinal = dataInicial.plusDays(45); //Seta a dataFinal para 45 dias após a dataInicial
+    private Set<Dev> devsInscritos = new HashSet<>(); //A ordem de inscrição é irrelevante
+    private Set<Conteudo> conteudos = new LinkedHashSet<>(); //Preservar a ordem de inserção
 
     public String getNome() {
         return nome;
@@ -32,16 +32,8 @@ public class Bootcamp {
         return dataInicial;
     }
 
-    public void setDataInicial(LocalDate dataInicial) {
-        this.dataInicial = dataInicial;
-    }
-
     public LocalDate getDataFinal() {
         return dataFinal;
-    }
-
-    public void setDataFinal(LocalDate dataFinal) {
-        this.dataFinal = dataFinal;
     }
 
     public Set<Dev> getDevsInscritos() {

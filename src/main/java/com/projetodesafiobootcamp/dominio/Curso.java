@@ -6,6 +6,14 @@ public class Curso extends Conteudo {
 
     private Integer cargaHoraria;
 
+    @Override
+    public double calcularXp() {
+        return XP_PADRAO * cargaHoraria;
+    }
+
+    public Curso() {
+    }
+
     public Integer getCargaHoraria() {
         return cargaHoraria;
     }
@@ -25,11 +33,6 @@ public class Curso extends Conteudo {
     @Override
     public int hashCode() {
         return Objects.hash(cargaHoraria);
-    }
-
-    @Override
-    public double calcularXp() {
-        return XP_PADRAO + cargaHoraria;
     }
 
     @Override
